@@ -1,1 +1,3 @@
-const b=document.querySelector('.menu-button'),n=document.querySelector('.navlinks');b?.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'Закрыть':'Меню'});
+const button=document.querySelector('.menu-button');
+const mobileNav=document.querySelector('.mobile-nav');
+button?.addEventListener('click',()=>{const isOpen=mobileNav.classList.toggle('open');button.setAttribute('aria-expanded',String(isOpen));button.textContent=isOpen?'Закрыть':'Меню'});
