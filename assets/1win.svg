@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 48" fill="none" role="img" aria-label="1win">
+  <defs>
+    <linearGradient id="win-blue" x1="34" y1="6" x2="156" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6FD0FF"/>
+      <stop offset="0.55" stop-color="#2B8CFF"/>
+      <stop offset="1" stop-color="#1A5FD4"/>
+    </linearGradient>
+    <filter id="logo-shadow" x="-6%" y="-12%" width="112%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.8" flood-color="#040B18" flood-opacity="0.95"/>
+    </filter>
+  </defs>
+  <g filter="url(#logo-shadow)">
+    <text
+      x="1"
+      y="36"
+      font-family="Inter,Segoe UI,Helvetica Neue,Arial,sans-serif"
+      font-size="34"
+      font-weight="800"
+      fill="#FFFFFF"
+      letter-spacing="-1.5"
+    >1</text>
+    <text
+      x="28"
+      y="36"
+      font-family="Inter,Segoe UI,Helvetica Neue,Arial,sans-serif"
+      font-size="34"
+      font-weight="800"
+      fill="url(#win-blue)"
+      letter-spacing="-0.8"
+    >win</text>
+  </g>
+</svg>
