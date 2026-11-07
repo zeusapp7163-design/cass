@@ -77,7 +77,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru">
       <head>
-        <link rel="preconnect" href="https://one-vv6649.com" />
         <meta name="yandex" content="all" />
       </head>
       <body>{children}</body>

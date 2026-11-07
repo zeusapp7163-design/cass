@@ -21,7 +21,7 @@ export function Slots() {
         </div>
 
         <div className="slots-grid">
-          {SLOTS.map((slot, index) => (
+          {SLOTS.map((slot) => (
             <a
               key={slot.name}
               href="#top"
@@ -34,7 +34,7 @@ export function Slots() {
                 width={360}
                 height={472}
                 sizes="(min-width: 1024px) 180px, (min-width: 640px) 30vw, 45vw"
-                loading={index < 3 ? 'eager' : 'lazy'}
+                loading="lazy"
               />
               <span className="slot-caption">
                 <span>{slot.provider}</span>

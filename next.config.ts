@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   images: {
+    // Отдаём статику напрямую: исходники уже сжаты (7–34 КБ), а динамический
+    // /_next/image — лишняя точка отказа и задержка на медленных каналах.
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
