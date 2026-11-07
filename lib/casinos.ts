@@ -26,6 +26,8 @@ export type Casino = {
   features: string[];
   payments: string[];
   bonusPercent: number;
+  payoutMax: number;
+  minDepositValue: number;
   scores: { payout: number; bonus: number; games: number; support: number };
   pros: string[];
   cons: string[];
@@ -69,6 +71,8 @@ export const CASINOS: Casino[] = [
     license: 'Кюрасао',
     features: ['4 депозита', 'Кэшбэк до 30%', 'СБП и крипто', 'Приложение'],
     bonusPercent: 500,
+    payoutMax: 15,
+    minDepositValue: 500,
     scores: { payout: 9.8, bonus: 9.7, games: 9.5, support: 9.0 },
     pros: ['Выплаты за 5–15 минут', 'Кэшбэк до 30%', 'Приложение iOS и Android'],
     cons: ['Вейджер 30x на бонус'],
@@ -95,12 +99,14 @@ export const CASINOS: Casino[] = [
     minDeposit: '1 000 ₽',
     games: '4 200+',
     license: 'Кюрасао',
-    features: ['TON и USDT', 'Live-казино', 'Турниры', 'Rakeback'],
+    features: ['Вывод в любой валюте', 'Live-казино', 'Турниры', 'Rakeback'],
     bonusPercent: 500,
+    payoutMax: 10,
+    minDepositValue: 1000,
     scores: { payout: 9.6, bonus: 9.5, games: 9.0, support: 9.2 },
-    pros: ['Моментальный вывод в TON и USDT', 'Rakeback и турниры', 'Собственное live-казино'],
+    pros: ['Вывод в любой валюте, включая крипту', 'Rakeback и турниры', 'Собственное live-казино'],
     cons: ['Минимальный депозит 1 000 ₽'],
-    payments: ['TON', 'USDT', 'BTC', 'Карты'],
+    payments: ['Любая валюта', 'USDT', 'BTC', 'Карты'],
     accent: '#7ce03a',
   },
   {
@@ -126,6 +132,8 @@ export const CASINOS: Casino[] = [
     license: 'Кюрасао',
     features: ['Бонус без депозита', 'Слоты и краш', 'Кэшбэк 10%', 'Чат 24/7'],
     bonusPercent: 350,
+    payoutMax: 20,
+    minDepositValue: 500,
     scores: { payout: 9.3, bonus: 9.4, games: 8.8, support: 9.0 },
     pros: ['Бонус без депозита', 'До 100 000 ₽ на депозит', 'Регистрация за минуту'],
     cons: ['Поддержка только в чате'],
@@ -154,6 +162,8 @@ export const CASINOS: Casino[] = [
     license: 'Кюрасао',
     features: ['Бонус за друзей', 'Турниры', 'Live-дилеры', 'Поддержка 24/7'],
     bonusPercent: 370,
+    payoutMax: 30,
+    minDepositValue: 500,
     scores: { payout: 9.0, bonus: 9.6, games: 8.6, support: 9.1 },
     pros: ['До 800 фриспинов новичкам', 'Бонус за приглашённых друзей', 'Live-дилеры'],
     cons: ['Вывод до 30 минут'],
@@ -173,7 +183,7 @@ export const SLOTS = [
   { name: 'Wanted Dead or a Wild', image: '/images/slots/wanted-dead-or-a-wild.webp', provider: 'Hacksaw' },
 ];
 
-export const PAYMENTS = ['СБП', 'МИР', 'Visa', 'Mastercard', 'USDT', 'Bitcoin', 'TON', 'ЮMoney'];
+export const PAYMENTS = ['СБП', 'МИР', 'Visa', 'Mastercard', 'USDT', 'Bitcoin', 'GRAM', 'ЮMoney'];
 
 export const FAQ = [
   {

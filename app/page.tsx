@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { TopCasinos } from '@/components/TopCasinos';
+import { Quiz } from '@/components/Quiz';
 import { BonusBand } from '@/components/BonusBand';
 import { Slots } from '@/components/Slots';
 import { HowWeRate } from '@/components/HowWeRate';
@@ -24,6 +25,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <TopCasinos />
+        <Quiz />
         <BonusBand />
         <Slots />
         <HowWeRate />
