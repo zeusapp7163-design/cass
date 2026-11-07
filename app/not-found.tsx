@@ -20,7 +20,7 @@ export default function NotFound() {
           Такой страницы нет — мы обновили сайт. Рейтинг казино 2027 и все бонусы теперь на главной.
         </p>
         <div className="hero-actions">
-          <Link href="/" className="btn btn-gold">
+          <Link href="/" className="btn btn-primary">
             На главную
             <ArrowIcon width={15} height={15} />
           </Link>

@@ -18,7 +18,7 @@ export function Slots() {
                 alt={`Слот ${slot.name} от ${slot.provider}`}
                 width={360}
                 height={472}
-                sizes="(min-width: 1024px) 180px, (min-width: 640px) 30vw, 45vw"
+                sizes="116px"
                 loading="lazy"
               />
               <span className="slot-caption">

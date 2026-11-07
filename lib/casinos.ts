@@ -25,6 +25,10 @@ export type Casino = {
   license: string;
   features: string[];
   payments: string[];
+  bonusPercent: number;
+  scores: { payout: number; bonus: number; games: number; support: number };
+  pros: string[];
+  cons: string[];
   accent: string;
 };
 
@@ -49,8 +53,8 @@ export const CASINOS: Casino[] = [
     name: '1win',
     slogan: 'Максимальный бонус и выплаты за минуты',
     logo: '/images/casinos/1win.webp',
-    logoWidth: 303,
-    logoHeight: 120,
+    logoWidth: 320,
+    logoHeight: 127,
     rating: 4.9,
     votes: 12840,
     bonusValue: '500%',
@@ -64,6 +68,10 @@ export const CASINOS: Casino[] = [
     games: '5 000+',
     license: 'Кюрасао',
     features: ['4 депозита', 'Кэшбэк до 30%', 'СБП и крипто', 'Приложение'],
+    bonusPercent: 500,
+    scores: { payout: 9.8, bonus: 9.7, games: 9.5, support: 9.0 },
+    pros: ['Выплаты за 5–15 минут', 'Кэшбэк до 30%', 'Приложение iOS и Android'],
+    cons: ['Вейджер 30x на бонус'],
     payments: ['СБП', 'МИР', 'USDT', 'Карты'],
     accent: '#ff8a1f',
   },
@@ -73,8 +81,8 @@ export const CASINOS: Casino[] = [
     name: 'JetTon',
     slogan: 'Крипто-казино с моментальными выводами',
     logo: '/images/casinos/jetton.webp',
-    logoWidth: 832,
-    logoHeight: 120,
+    logoWidth: 320,
+    logoHeight: 46,
     rating: 4.8,
     votes: 8340,
     bonusValue: '500%',
@@ -88,6 +96,10 @@ export const CASINOS: Casino[] = [
     games: '4 200+',
     license: 'Кюрасао',
     features: ['TON и USDT', 'Live-казино', 'Турниры', 'Rakeback'],
+    bonusPercent: 500,
+    scores: { payout: 9.6, bonus: 9.5, games: 9.0, support: 9.2 },
+    pros: ['Моментальный вывод в TON и USDT', 'Rakeback и турниры', 'Собственное live-казино'],
+    cons: ['Минимальный депозит 1 000 ₽'],
     payments: ['TON', 'USDT', 'BTC', 'Карты'],
     accent: '#7ce03a',
   },
@@ -97,8 +109,8 @@ export const CASINOS: Casino[] = [
     name: 'Getx',
     slogan: 'Быстрая регистрация и щедрый старт',
     logo: '/images/casinos/getx.webp',
-    logoWidth: 393,
-    logoHeight: 120,
+    logoWidth: 320,
+    logoHeight: 98,
     rating: 4.7,
     votes: 6120,
     bonusValue: '350%',
@@ -113,6 +125,10 @@ export const CASINOS: Casino[] = [
     games: '3 800+',
     license: 'Кюрасао',
     features: ['Бонус без депозита', 'Слоты и краш', 'Кэшбэк 10%', 'Чат 24/7'],
+    bonusPercent: 350,
+    scores: { payout: 9.3, bonus: 9.4, games: 8.8, support: 9.0 },
+    pros: ['Бонус без депозита', 'До 100 000 ₽ на депозит', 'Регистрация за минуту'],
+    cons: ['Поддержка только в чате'],
     payments: ['СБП', 'МИР', 'USDT', 'ЮMoney'],
     accent: '#ffb02e',
   },
@@ -122,8 +138,8 @@ export const CASINOS: Casino[] = [
     name: 'MoriWin',
     slogan: '800 фриспинов новым игрокам',
     logo: '/images/casinos/moriwin.webp',
-    logoWidth: 505,
-    logoHeight: 120,
+    logoWidth: 320,
+    logoHeight: 76,
     rating: 4.6,
     votes: 4980,
     bonusValue: '370%',
@@ -137,6 +153,10 @@ export const CASINOS: Casino[] = [
     games: '3 500+',
     license: 'Кюрасао',
     features: ['Бонус за друзей', 'Турниры', 'Live-дилеры', 'Поддержка 24/7'],
+    bonusPercent: 370,
+    scores: { payout: 9.0, bonus: 9.6, games: 8.6, support: 9.1 },
+    pros: ['До 800 фриспинов новичкам', 'Бонус за приглашённых друзей', 'Live-дилеры'],
+    cons: ['Вывод до 30 минут'],
     payments: ['СБП', 'Карты', 'USDT', 'BTC'],
     accent: '#ff8a1f',
   },
