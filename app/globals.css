@@ -1015,15 +1015,13 @@ main,
 
 /* slots */
 .slots {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .slot {
   position: relative;
-  flex: 0 0 118px;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -1031,9 +1029,10 @@ main,
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-@media (min-width: 768px) {
-  .slot {
-    flex-basis: 132px;
+@media (min-width: 640px) {
+  .slots {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
   }
 }
 
@@ -1071,25 +1070,26 @@ main,
 /* methodology */
 .steps {
   display: grid;
-  gap: 26px;
+  gap: 10px;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 520px) {
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 900px) {
   .steps {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 30px;
   }
 }
 
 .step {
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
+  padding: 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
   text-align: left;
 }
 
@@ -1119,7 +1119,7 @@ main,
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .pay {
@@ -1133,8 +1133,10 @@ main,
 
 /* faq */
 .faq {
-  max-width: 780px;
-  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2px 20px;
 }
 
 .faq-item {
@@ -1142,7 +1144,7 @@ main,
 }
 
 .faq-item:first-child {
-  border-top: 1px solid var(--line);
+  border-top: 0;
 }
 
 .faq-item summary {
@@ -1523,5 +1525,20 @@ h2,
 
   .sort {
     align-self: center;
+  }
+}
+
+
+@media (max-width: 639px) {
+  .slot {
+    flex-basis: auto;
+  }
+
+  .faq {
+    padding: 2px 14px;
+  }
+
+  .seo {
+    text-align: left;
   }
 }

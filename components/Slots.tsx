@@ -4,7 +4,7 @@ import { SLOTS } from '@/lib/casinos';
 export function Slots() {
   return (
     <section id="slots" className="section" aria-labelledby="slots-title">
-      <div className="wrap">
+      <div className="narrow">
         <div className="head">
           <h2 id="slots-title">Популярные слоты</h2>
           <p>Автоматы с высоким RTP — есть во всех четырёх казино из рейтинга.</p>
@@ -18,7 +18,7 @@ export function Slots() {
                 alt={`Слот ${slot.name} от ${slot.provider}`}
                 width={360}
                 height={472}
-                sizes="116px"
+                sizes="140px"
                 loading="lazy"
               />
               <span className="slot-caption">

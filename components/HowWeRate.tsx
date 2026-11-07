@@ -10,7 +10,7 @@ const CRITERIA = [
 export function HowWeRate() {
   return (
     <section id="how" className="section" aria-labelledby="how-title">
-      <div className="wrap">
+      <div className="narrow">
         <div className="head">
           <h2 id="how-title">Как мы выбираем казино</h2>
           <p>Четыре критерия, по которым площадка попадает в топ — или вылетает из него.</p>
