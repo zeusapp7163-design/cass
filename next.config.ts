@@ -13,6 +13,21 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    // Старый статический сайт: сохраняем ссылочный вес и не отдаём 404 на проиндексированные URL.
+    return [
+      { source: '/index.html', destination: '/', permanent: true },
+      { source: '/index.htm', destination: '/', permanent: true },
+      {
+        source:
+          '/:page(about|bonuses|compare|disclosure|privacy|responsible|1win|jetton|cass|home|main).html',
+        destination: '/',
+        permanent: true,
+      },
+      { source: '/1win', destination: '/#1win', permanent: true },
+      { source: '/jetton', destination: '/#jetton', permanent: true },
+    ];
+  },
   async headers() {
     return [
       { source: '/:path*', headers: securityHeaders },
