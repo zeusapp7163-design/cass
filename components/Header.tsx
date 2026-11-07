@@ -1,15 +1,14 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { NAV } from '@/lib/site';
-import { ArrowIcon, SpadeIcon } from '@/components/icons';
+import { ArrowIcon } from '@/components/icons';
 
 export function Header() {
   return (
     <header className="site-header">
       <div className="wrap header-inner">
         <Link href="/" className="brand" aria-label="CasinoTop — на главную">
-          <span className="brand-mark">
-            <SpadeIcon />
-          </span>
+          <Image src="/icon.png" alt="" width={38} height={38} priority />
           <span>
             Casino<b>Top</b>
           </span>

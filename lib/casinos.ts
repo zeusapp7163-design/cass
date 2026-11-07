@@ -12,7 +12,9 @@ export type Casino = {
   /** Big value shown on the bonus plate, e.g. "500%". */
   bonusValue: string;
   bonusExtra: string;
-  /** Text of the promo code, null when the brand has no code. */
+  /** Optional cap under the bonus, e.g. "до 100 000 ₽". */
+  bonusCap?: string;
+  /** Promo code, null when the brand has none. */
   promoCode: string | null;
   url: string;
   badge: string;
@@ -31,13 +33,14 @@ export type Casino = {
  * TODO: Getx — заменить на вашу партнёрскую (трекинговую) ссылку.
  */
 export const AFFILIATE = {
-  oneWin:
-    'https://one-vv6649.com/casino/list?open=register&sub1=black',
-  jetton:
-    'https://jtbetlab.click/ch7v2YRRqma?target_id=/&target_type=registration',
+  oneWin: 'https://one-vv6649.com/casino/list?open=register&sub1=black',
+  jetton: 'https://jtbetlab.click/ch7v2YRRqma?target_id=/&target_type=registration',
   getx: 'https://getx.casino/',
   moriwin: 'https://click.mori.vin/MP7ineRN',
 } as const;
+
+/** Промокод действует только в 1win и JetTon. */
+export const PROMO_CODE = 'ADBLOCK';
 
 export const CASINOS: Casino[] = [
   {
@@ -52,7 +55,7 @@ export const CASINOS: Casino[] = [
     votes: 12840,
     bonusValue: '500%',
     bonusExtra: '+70 фриспинов',
-    promoCode: 'ADBLOCK',
+    promoCode: PROMO_CODE,
     url: AFFILIATE.oneWin,
     badge: 'Выбор редакции',
     badgeTone: 'gold',
@@ -62,7 +65,7 @@ export const CASINOS: Casino[] = [
     license: 'Кюрасао',
     features: ['4 депозита', 'Кэшбэк до 30%', 'СБП и крипто', 'Приложение'],
     payments: ['СБП', 'МИР', 'USDT', 'Карты'],
-    accent: '#f7b32b',
+    accent: '#ff8a1f',
   },
   {
     id: 'jetton',
@@ -76,7 +79,7 @@ export const CASINOS: Casino[] = [
     votes: 8340,
     bonusValue: '425%',
     bonusExtra: '+250 фриспинов',
-    promoCode: 'ADBLOCK',
+    promoCode: PROMO_CODE,
     url: AFFILIATE.jetton,
     badge: 'Лучший для крипты',
     badgeTone: 'cyan',
@@ -98,9 +101,10 @@ export const CASINOS: Casino[] = [
     logoHeight: 160,
     rating: 4.7,
     votes: 6120,
-    bonusValue: '300%',
-    bonusExtra: '+200 фриспинов',
-    promoCode: 'ADBLOCK',
+    bonusValue: '350%',
+    bonusExtra: '+250 фриспинов',
+    bonusCap: 'до 100 000 ₽',
+    promoCode: null,
     url: AFFILIATE.getx,
     badge: 'Новинка',
     badgeTone: 'violet',
@@ -110,7 +114,7 @@ export const CASINOS: Casino[] = [
     license: 'Кюрасао',
     features: ['Бонус без депозита', 'Слоты и краш', 'Кэшбэк 10%', 'Чат 24/7'],
     payments: ['СБП', 'МИР', 'USDT', 'ЮMoney'],
-    accent: '#f9af2c',
+    accent: '#ffb02e',
   },
   {
     id: 'moriwin',
@@ -124,7 +128,7 @@ export const CASINOS: Casino[] = [
     votes: 4980,
     bonusValue: '370%',
     bonusExtra: '+800 фриспинов',
-    promoCode: 'ADBLOCK',
+    promoCode: null,
     url: AFFILIATE.moriwin,
     badge: 'Много фриспинов',
     badgeTone: 'neutral',
@@ -134,9 +138,11 @@ export const CASINOS: Casino[] = [
     license: 'Кюрасао',
     features: ['Бонус за друзей', 'Турниры', 'Live-дилеры', 'Поддержка 24/7'],
     payments: ['СБП', 'Карты', 'USDT', 'BTC'],
-    accent: '#f7b32b',
+    accent: '#ff8a1f',
   },
 ];
+
+export const CASINOS_WITH_PROMO = CASINOS.filter((casino) => casino.promoCode);
 
 export const SLOTS = [
   { name: 'Gates of Olympus', image: '/images/slots/gates-of-olympus.webp', provider: 'Pragmatic Play' },
@@ -152,15 +158,15 @@ export const PAYMENTS = ['СБП', 'МИР', 'Visa', 'Mastercard', 'USDT', 'Bitc
 export const FAQ = [
   {
     q: 'Какое онлайн-казино лучшее в 2026 году?',
-    a: 'В нашем рейтинге первое место занимает 1win: лицензия Кюрасао, приветственный бонус до 500% на четыре депозита, кэшбэк до 30% и выплаты в среднем за 5–15 минут. JetTon — лучший выбор для криптовалюты, Getx — для быстрого старта с минимальным депозитом, MoriWin — для охоты за фриспинами.',
+    a: 'В нашем рейтинге первое место занимает 1win: лицензия Кюрасао, приветственный бонус до 500% на четыре депозита, кэшбэк до 30% и выплаты в среднем за 5–15 минут. JetTon — лучший выбор для криптовалюты, Getx — для быстрого старта с бонусом до 350% и 250 фриспинами, MoriWin — для охоты за фриспинами (до 800).',
   },
   {
     q: 'Как быстро выводят деньги из казино?',
     a: 'Все четыре площадки из топа выводят средства от 5 минут до 30 минут при верифицированном аккаунте. Скорость зависит от платёжного метода: СБП и криптовалюта приходят быстрее всего, банковские карты — в течение нескольких часов.',
   },
   {
-    q: 'Нужен ли промокод для бонуса?',
-    a: 'Бонус новичка начисляется автоматически после первого депозита. Промокод ADBLOCK даёт дополнительный бонус к приветственному пакету — скопируйте его кнопкой на этой странице и укажите в поле «Промокод» при регистрации.',
+    q: 'Где действует промокод ADBLOCK?',
+    a: 'Промокод ADBLOCK работает только в 1win и JetTon — скопируйте его кнопкой на этой странице и укажите в поле «Промокод» при регистрации. В Getx и MoriWin промокодов нет: приветственный бонус начисляется автоматически после первого депозита.',
   },
   {
     q: 'Легально ли играть в онлайн-казино?',

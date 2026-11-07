@@ -1,4 +1,4 @@
-import { SpadeIcon } from '@/components/icons';
+import Image from 'next/image';
 import { SITE } from '@/lib/site';
 
 export function Footer() {
@@ -8,9 +8,7 @@ export function Footer() {
         <div className="footer-top">
           <div>
             <span className="brand">
-              <span className="brand-mark">
-                <SpadeIcon />
-              </span>
+              <Image src="/icon.png" alt="" width={34} height={34} />
               <span>
                 Casino<b>Top</b>
               </span>

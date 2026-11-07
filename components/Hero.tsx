@@ -1,106 +1,115 @@
 import Image from 'next/image';
 import { CASINOS } from '@/lib/casinos';
 import { SITE } from '@/lib/site';
-import { ArrowIcon, BoltIcon, GiftIcon, ShieldIcon } from '@/components/icons';
+import { ArrowIcon, StarIcon } from '@/components/icons';
 
 export function Hero() {
-  const first = CASINOS[0];
-
   return (
     <section className="hero" aria-label="Рейтинг онлайн-казино">
-      <div className="hero-grid" aria-hidden="true" />
-      <div className="hero-orb hero-orb--violet" aria-hidden="true" />
-      <div className="hero-orb hero-orb--cyan" aria-hidden="true" />
+      <div className="hero-glow hero-glow--orange" aria-hidden="true" />
+      <div className="hero-glow hero-glow--blue" aria-hidden="true" />
+      <Image
+        className="hero-watermark"
+        src="/icon.png"
+        alt=""
+        width={460}
+        height={460}
+        aria-hidden="true"
+        priority={false}
+      />
 
       <div className="wrap hero-inner">
         <div>
-          <span className="eyebrow rise">
-            <span className="dot-live" aria-hidden="true" />
-            Обновлено {SITE.updatedLabel}
-          </span>
+          <div className="hero-chips rise">
+            <span className="eyebrow">
+              <span className="dot-live" aria-hidden="true" />
+              Проверено вручную
+            </span>
+            <span className="eyebrow">Обновлено {SITE.updatedLabel}</span>
+          </div>
 
-          <h1 className="rise" style={{ animationDelay: '60ms' }}>
-            Топ онлайн казино
-            <br />
-            <span className="grad">2026 года</span>
+          <h1 className="hero-title rise" style={{ animationDelay: '70ms' }}>
+            <span>Топ онлайн</span>
+            <span>казино</span>
+            <span className="year">2026</span>
           </h1>
 
-          <p className="hero-lead rise" style={{ animationDelay: '120ms' }}>
-            4 проверенные площадки с лицензией, бонусами до&nbsp;500% и выплатами за минуты.
-            Без рекламы и случайных сайтов — только ручной отбор.
+          <p className="hero-lead rise" style={{ animationDelay: '130ms' }}>
+            4 лицензированные площадки с бонусами до 500% и выплатами за минуты. Рейтинг собран
+            вручную — без платных мест.
           </p>
 
-          <div className="hero-actions rise" style={{ animationDelay: '180ms' }}>
+          <div className="hero-actions rise" style={{ animationDelay: '190ms' }}>
             <a href="#top" className="btn btn-primary">
-              Смотреть топ-4
+              Смотреть рейтинг
               <ArrowIcon width={16} height={16} />
             </a>
             <a href="#how" className="btn btn-ghost">
-              Как мы выбираем
+              Методика
             </a>
           </div>
 
-          <ul className="hero-trust rise" style={{ animationDelay: '240ms' }}>
-            <li className="trust-item">
-              <ShieldIcon />
-              Лицензии проверены
-            </li>
-            <li className="trust-item">
-              <BoltIcon />
-              Выплаты от 5 минут
-            </li>
-            <li className="trust-item">
-              <GiftIcon />
-              Бонусы до 500%
-            </li>
-          </ul>
-        </div>
-
-        <div className="showcase" aria-hidden="true">
-          <div className="showcase-card">
-            <div className="showcase-top">
-              <span>№1 в рейтинге</span>
-              <span style={{ color: '#f7b32b' }}>★ {first.rating.toFixed(1)}</span>
+          <div className="hero-stats rise" style={{ animationDelay: '240ms' }}>
+            <div className="hero-stat">
+              <b>4</b>
+              <span>казино в топе</span>
             </div>
-
-            <div className="showcase-logo">
-              <Image
-                src={first.logo}
-                alt=""
-                width={first.logoWidth}
-                height={first.logoHeight}
-                sizes="(min-width: 1024px) 340px, 80vw"
-                priority
-              />
+            <div className="hero-stat">
+              <b>12 000+</b>
+              <span>игр и слотов</span>
             </div>
-
-            <div className="showcase-bonus">
-              <div>
-                <span>Бонус новичкам</span>
-                <strong>{first.bonusValue}</strong>
-              </div>
-              <span>{first.bonusExtra}</span>
-            </div>
-
-            <div className="showcase-bars">
-              <div className="showcase-bar">
-                <span>Выплаты</span>
-                <i style={{ ['--w' as string]: '94%' }} />
-                <span>94</span>
-              </div>
-              <div className="showcase-bar">
-                <span>Бонусы</span>
-                <i style={{ ['--w' as string]: '98%' }} />
-                <span>98</span>
-              </div>
-              <div className="showcase-bar">
-                <span>Игры</span>
-                <i style={{ ['--w' as string]: '92%' }} />
-                <span>92</span>
-              </div>
+            <div className="hero-stat">
+              <b>5 мин</b>
+              <span>мин. вывод</span>
             </div>
           </div>
         </div>
+
+        <aside className="rank-panel rise" style={{ animationDelay: '160ms' }} aria-label="Топ-4 казино">
+          <div className="rank-panel-head">
+            <span>Рейтинг · ноябрь 2026</span>
+            <em>
+              <span className="dot-live" aria-hidden="true" />
+              live
+            </em>
+          </div>
+
+          {CASINOS.map((casino) => (
+            <a
+              key={casino.id}
+              href={`#${casino.id}`}
+              className={`rank-row${casino.rank === 1 ? ' rank-row--first' : ''}`}
+            >
+              <span className="rank-row__num">{String(casino.rank).padStart(2, '0')}</span>
+              <span className="rank-row__main">
+                <span className="rank-row__logo">
+                  <Image
+                    src={casino.logo}
+                    alt=""
+                    width={casino.logoWidth}
+                    height={casino.logoHeight}
+                    sizes="64px"
+                  />
+                </span>
+                <span className="rank-row__name">
+                  <b>{casino.name}</b>
+                  <span>{casino.bonusValue} бонус</span>
+                </span>
+              </span>
+              <span className="rank-row__rating">
+                <StarIcon />
+                {casino.rating.toFixed(1)}
+              </span>
+            </a>
+          ))}
+
+          <div className="rank-panel-foot">
+            <span>Пересматриваем каждый месяц</span>
+            <a href="#top" className="btn btn-ghost btn-sm" style={{ padding: '8px 12px' }}>
+              Все
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
   );
