@@ -8,7 +8,7 @@ export function Header() {
     <header className="site-header">
       <div className="wrap header-inner">
         <Link href="/" className="brand" aria-label="CasinoTop — на главную">
-          <Image src="/icon.png" alt="" width={34} height={34} priority />
+          <Image src="/images/brand/logo.webp" alt="" width={34} height={34} priority />
           <span>CasinoTop</span>
         </Link>
 

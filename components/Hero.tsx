@@ -15,7 +15,7 @@ export function Hero() {
 
       <div className="wrap hero-inner">
         <div className="hero-mark rise">
-          <Image src="/icon.png" alt="" width={66} height={66} priority />
+          <Image src="/images/brand/logo.webp" alt="" width={66} height={66} priority />
         </div>
 
         <h1 className="rise">

@@ -8,7 +8,7 @@ export function Footer() {
         <div className="footer-top">
           <div>
             <span className="brand">
-              <Image src="/icon.png" alt="" width={30} height={30} />
+              <Image src="/images/brand/logo.webp" alt="" width={30} height={30} />
               <span>CasinoTop</span>
             </span>
             <p className="footer-note mt-4">
