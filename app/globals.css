@@ -1328,3 +1328,157 @@ main,
     transform: translateY(0);
   }
 }
+
+
+/* ---------- responsive hardening ---------- */
+@media (max-width: 639px) {
+  .card-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .card-logo {
+    justify-items: start;
+    width: 100%;
+    height: 40px;
+  }
+
+  .card-logo img {
+    width: 118px;
+  }
+
+  .card-badge {
+    white-space: normal;
+  }
+
+  .card-bonus {
+    flex-wrap: wrap;
+  }
+
+  .card-bonus > div {
+    min-width: 0;
+  }
+
+  .bonus-value {
+    font-size: 23px;
+  }
+
+  .bonus-value em {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 479px) {
+  .slot {
+    flex-basis: 100px;
+  }
+
+  .hero-stat span {
+    font-size: 11.5px;
+  }
+
+  .quiz-result {
+    gap: 12px;
+  }
+}
+
+/* безопасные зоны iOS */
+.mobile-cta {
+  padding-bottom: max(9px, env(safe-area-inset-bottom));
+  bottom: max(10px, env(safe-area-inset-bottom));
+}
+
+.site-footer {
+  padding-bottom: calc(104px + env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+  .site-footer {
+    padding-bottom: 40px;
+  }
+}
+
+/* акцентная полоса у лидера */
+.card--first::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #ff8a2b, rgba(255, 106, 0, 0.1));
+}
+
+/* длинные строки не выпирают */
+.card-name,
+.card-slogan,
+.quiz-result span,
+.bonus-cap {
+  overflow-wrap: anywhere;
+}
+
+
+/* ---------- polish ---------- */
+h1,
+h2,
+.hero-sub,
+.head p {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(255, 122, 26, 0.7);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+@media (hover: hover) {
+  .card {
+    will-change: transform;
+  }
+
+  .chip-btn:hover,
+  .sort button:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.card-badge {
+  max-width: 100%;
+}
+
+.bonus-value em {
+  white-space: normal;
+}
+
+/* на узких экранах промокод уходит на свою строку */
+@media (max-width: 420px) {
+  .card-bonus {
+    align-items: flex-start;
+  }
+
+  .card-bonus .promo-btn {
+    margin-top: 2px;
+  }
+}
+
+/* компактнее вертикальные отступы на телефоне */
+@media (max-width: 639px) {
+  .section {
+    padding: 46px 0;
+  }
+
+  .head {
+    margin-bottom: 24px;
+  }
+
+  .head h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero h1 {
+    letter-spacing: -0.04em;
+  }
+}
