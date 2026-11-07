@@ -1,0 +1,44 @@
+import { SpadeIcon } from '@/components/icons';
+import { SITE } from '@/lib/site';
+
+export function Footer() {
+  return (
+    <footer className="site-footer">
+      <div className="wrap">
+        <div className="footer-top">
+          <div>
+            <span className="brand">
+              <span className="brand-mark">
+                <SpadeIcon />
+              </span>
+              <span>
+                Casino<b>Top</b>
+              </span>
+            </span>
+            <p className="footer-note mt-4">
+              Рейтинг онлайн-казино 2026: ручная проверка лицензий, выплат и бонусов. Мы не
+              принимаем ставки и не храним средства игроков — все переходы ведут на официальные
+              сайты казино. Материалы предназначены для лиц старше 18 лет.
+            </p>
+          </div>
+
+          <div className="footer-links" aria-label="Разделы">
+            <a href="#top">Топ казино</a>
+            <a href="#bonuses">Бонусы</a>
+            <a href="#slots">Слоты</a>
+            <a href="#how">Методика</a>
+            <a href="#faq">FAQ</a>
+            <a href={`mailto:${SITE.email}`}>Связаться</a>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>
+            © {new Date().getFullYear()} {SITE.domain}. Все права защищены.
+          </span>
+          <span>Играйте ответственно. 18+</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
