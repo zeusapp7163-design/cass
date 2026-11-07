@@ -7,7 +7,7 @@ export function TopCasinos() {
     <section id="top" className="section" aria-labelledby="top-title">
       <div className="wrap">
         <div className="head">
-          <h2 id="top-title">Топ-4 онлайн казино 2026</h2>
+          <h2 id="top-title">Топ-4 онлайн казино 2027</h2>
           <p>
             Оценка складывается из скорости выплат, условий бонусов, лицензии и отзывов игроков.
             Пересматриваем список каждый месяц.

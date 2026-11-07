@@ -14,9 +14,13 @@ export function Hero() {
       <div className="hero-glow hero-glow--blue" aria-hidden="true" />
 
       <div className="wrap hero-inner">
+        <div className="hero-mark rise">
+          <Image src="/icon.png" alt="" width={66} height={66} priority />
+        </div>
+
         <h1 className="rise">
           Топ онлайн казино
-          <span className="year">2026</span>
+          <span className="year">2027</span>
         </h1>
 
         <p className="hero-sub rise" style={{ animationDelay: '80ms' }}>

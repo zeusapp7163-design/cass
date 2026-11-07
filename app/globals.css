@@ -224,6 +224,28 @@ body {
   position: relative;
 }
 
+.hero-mark {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  margin-bottom: 26px;
+}
+
+.hero-mark img {
+  width: 66px;
+  height: 66px;
+  border-radius: 18px;
+  box-shadow: 0 22px 54px -20px rgba(255, 122, 24, 0.85);
+}
+
+.hero-mark::before {
+  content: '';
+  position: absolute;
+  inset: -46px;
+  background: radial-gradient(circle, rgba(255, 122, 24, 0.28), rgba(255, 122, 24, 0) 68%);
+  z-index: -1;
+}
+
 .hero h1 {
   margin: 0 auto;
   max-width: 900px;
@@ -362,14 +384,13 @@ body {
 .strip-logo {
   display: flex;
   align-items: center;
-  height: 26px;
+  height: 30px;
 }
 
 .strip-logo img {
-  max-height: 22px;
-  max-width: 100%;
+  height: 30px;
   width: auto;
-  height: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -479,10 +500,9 @@ body {
 }
 
 .casino-logo img {
-  max-height: 22px;
-  max-width: 78%;
+  height: 34px;
   width: auto;
-  height: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -737,10 +757,6 @@ body {
     height: 64px;
   }
 
-  .casino-logo img {
-    max-height: 26px;
-  }
-
   .casino-bonus {
     background: transparent;
     border: 0;
@@ -867,9 +883,9 @@ body {
 }
 
 .compare .cell-brand img {
-  height: 18px;
+  height: 24px;
   width: auto;
-  max-width: 90px;
+  max-width: 100px;
   object-fit: contain;
 }
 
@@ -971,12 +987,11 @@ body {
 }
 
 .promo-logos img {
-  max-height: 20px;
-  max-width: 120px;
+  height: 30px;
   width: auto;
-  height: auto;
+  max-width: 140px;
   object-fit: contain;
-  opacity: 0.9;
+  opacity: 0.92;
 }
 
 .promo-note {
