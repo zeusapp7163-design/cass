@@ -45,10 +45,8 @@ export function CasinoCard({ casino }: { casino: Casino }) {
           />
         </span>
         <div className="card-id">
-          <div className="card-title">
-            <h3 className="card-name">{casino.name}</h3>
-            <span className="card-badge">{casino.badge}</span>
-          </div>
+          <h3 className="sr-only">{casino.name}</h3>
+          <span className="card-badge">{casino.badge}</span>
           <p className="card-slogan">{casino.slogan}</p>
         </div>
       </div>
