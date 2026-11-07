@@ -2,11 +2,15 @@ import { ArrowIcon, CheckIcon } from '@/components/icons';
 
 const TRUST = ['Лицензии проверены', 'Выплаты от 5 минут', 'Бонусы до 500%'];
 
+const STATS = [
+  { value: '4', label: 'казино в рейтинге' },
+  { value: '12 000+', label: 'игр и слотов' },
+  { value: '5 мин', label: 'минимальный вывод' },
+];
+
 export function Hero() {
   return (
     <section className="hero" aria-label="Рейтинг онлайн-казино">
-      <div className="hero-glow" aria-hidden="true" />
-
       <div className="wrap">
         <span className="kicker rise">Рейтинг 2027</span>
 
@@ -16,21 +20,21 @@ export function Hero() {
           <span className="year">2027</span>
         </h1>
 
-        <p className="hero-sub rise" style={{ animationDelay: '120ms' }}>
+        <p className="hero-sub rise" style={{ animationDelay: '110ms' }}>
           Четыре площадки, которые мы проверили сами: лицензия, быстрые выплаты и честные бонусы.
         </p>
 
-        <div className="hero-actions rise" style={{ animationDelay: '170ms' }}>
+        <div className="hero-actions rise" style={{ animationDelay: '160ms' }}>
           <a href="#top" className="btn btn-primary">
             Смотреть топ-4
-            <ArrowIcon width={15} height={15} />
+            <ArrowIcon width={16} height={16} />
           </a>
           <a href="#how" className="btn btn-ghost">
             Как мы выбираем
           </a>
         </div>
 
-        <ul className="hero-trust rise" style={{ animationDelay: '220ms' }}>
+        <ul className="hero-trust rise" style={{ animationDelay: '200ms' }}>
           {TRUST.map((item) => (
             <li key={item}>
               <CheckIcon aria-hidden="true" />
@@ -38,6 +42,15 @@ export function Hero() {
             </li>
           ))}
         </ul>
+
+        <div className="hero-stats rise" style={{ animationDelay: '250ms' }}>
+          {STATS.map((stat) => (
+            <div key={stat.label} className="hero-stat">
+              <b>{stat.value}</b>
+              <span>{stat.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
