@@ -48,10 +48,29 @@ npx tsc --noEmit   # проверка типов
 
 ## Деплой (Vercel)
 
-1. Репозиторий на GitHub → Vercel: **Add New → Project → Import**.
-2. Framework: Next.js (определяется автоматически), Build Command `npm run build`, Install `npm install`.
-3. Domain: `casinotop.app` (+ `www` при необходимости).
-4. После деплоя: Яндекс.Вебмастер → добавить сайт → подтвердить → отправить `https://casinotop.app/sitemap.xml`.
+Сайт уже задеплоен и живёт на домене.
+
+- GitHub: `https://github.com/zeusapp7163-design/cass` (ветка `main`, полная замена старого статического сайта)
+- Vercel: проект `cass` (team `seozeus-projects`) → **https://casinotop.app**
+- Связка Git → Vercel включена (`productionBranch: main`): любой пуш в `main` пересобирает прод.
+- `vercel.json` задаёт `"framework": "nextjs"` — у проекта в настройках пресет «Other», без этого файла Vercel собирал бы как статику.
+
+Обновление сайта:
+
+```bash
+git add -A && git commit -m "..." && git push
+```
+
+Ручной деплой из CLI (если нужно мимо Git):
+
+```bash
+vercel deploy --prod
+```
+
+Домен `casinotop.app` привязан к проекту; Deployment Protection включён только для `*.vercel.app`-превью, кастомный домен публичный.
+
+После изменений: Яндекс.Вебмастер → «Индексирование» → отправить `https://casinotop.app/sitemap.xml`.
+
 
 ## Ассеты
 
