@@ -12,12 +12,7 @@ export function Slots() {
 
         <div className="slots">
           {SLOTS.map((slot) => (
-            <a
-              key={slot.name}
-              href="#top"
-              className="slot"
-              aria-label={`Играть в ${slot.name} на деньги`}
-            >
+            <a key={slot.name} href="#top" className="slot" aria-label={`Играть в ${slot.name}`}>
               <Image
                 src={slot.image}
                 alt={`Слот ${slot.name} от ${slot.provider}`}

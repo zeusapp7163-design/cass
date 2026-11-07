@@ -22,37 +22,38 @@ export function CasinoCard({ casino }: { casino: Casino }) {
       className={`casino-card${isFirst ? ' casino-card--first' : ''}`}
       aria-label={`${casino.name} — ${casino.rank} место в рейтинге`}
     >
-      <div className="casino-rank" aria-hidden="true">
-        {String(casino.rank).padStart(2, '0')}
-      </div>
-
-      <div className="casino-logo">
-        <Image
-          src={casino.logo}
-          alt={`Логотип казино ${casino.name}`}
-          width={casino.logoWidth}
-          height={casino.logoHeight}
-          sizes="156px"
-        />
-      </div>
-
-      <div className="casino-info">
-        <div className="casino-title">
-          <h3 className="casino-name">{casino.name}</h3>
-          <span className={`casino-badge casino-badge--${casino.badgeTone}`}>{casino.badge}</span>
+      <div className="casino-top">
+        <div className="casino-rank" aria-hidden="true">
+          {String(casino.rank).padStart(2, '0')}
         </div>
-        <p className="casino-slogan">{casino.slogan}</p>
-        <ul className="casino-chips" aria-label={`Особенности ${casino.name}`}>
-          {casino.features.slice(0, 3).map((feature) => (
-            <li key={feature} className="chip">
-              {feature}
-            </li>
-          ))}
-        </ul>
+        <div className="casino-id">
+          <div className="casino-title">
+            <span className="casino-logo">
+              <Image
+                src={casino.logo}
+                alt={casino.name}
+                width={casino.logoWidth}
+                height={casino.logoHeight}
+                sizes="(min-width: 640px) 320px, 78vw"
+                priority={isFirst}
+              />
+            </span>
+            <span className="casino-badge">{casino.badge}</span>
+          </div>
+          <h3 className="sr-only">{casino.name}</h3>
+          <p className="casino-slogan">{casino.slogan}</p>
+          <ul className="casino-chips" aria-label={`Особенности ${casino.name}`}>
+            {casino.features.slice(0, 3).map((feature) => (
+              <li key={feature} className="chip">
+                {feature}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
       <div className="casino-bonus">
-        <div className="bonus-main">
+        <div>
           <span className="bonus-label">Бонус новичкам</span>
           <div className="bonus-value">
             {casino.bonusValue}
@@ -60,11 +61,7 @@ export function CasinoCard({ casino }: { casino: Casino }) {
           </div>
           {casino.bonusCap ? <span className="bonus-cap">{casino.bonusCap}</span> : null}
         </div>
-        {casino.promoCode ? (
-          <PromoCode code={casino.promoCode} />
-        ) : (
-          <span className="promo-hint">Без промокода</span>
-        )}
+        {casino.promoCode ? <PromoCode code={casino.promoCode} /> : <span className="promo-hint">Без промокода</span>}
       </div>
 
       <div className="casino-action">
@@ -76,17 +73,18 @@ export function CasinoCard({ casino }: { casino: Casino }) {
           href={casino.url}
           target="_blank"
           rel="sponsored nofollow noopener noreferrer"
-          className="btn btn-primary btn-sm"
+          className="btn btn-gold btn-sm"
           aria-label={`Играть в ${casino.name}`}
         >
           Играть
           <ArrowIcon width={14} height={14} />
         </a>
-        <div className="casino-meta">
-          <span>{casino.payout}</span>
-          <span>от {casino.minDeposit}</span>
-          <span>{casino.license}</span>
-        </div>
+      </div>
+
+      <div className="casino-meta">
+        <span>{casino.payout}</span>
+        <span>от {casino.minDeposit}</span>
+        <span>{casino.license}</span>
       </div>
     </article>
   );

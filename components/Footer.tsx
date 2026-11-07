@@ -8,8 +8,10 @@ export function Footer() {
         <div className="footer-top">
           <div>
             <span className="brand">
-              <Image src="/images/brand/logo.webp" alt="" width={30} height={30} />
-              <span>CasinoTop</span>
+              <Image src="/images/brand/logo.webp" alt="" width={28} height={28} />
+              <span>
+                Casino<b>Top</b>
+              </span>
             </span>
             <p className="footer-note mt-4">
               Рейтинг онлайн-казино 2027: ручная проверка лицензий, выплат и бонусов. Мы не

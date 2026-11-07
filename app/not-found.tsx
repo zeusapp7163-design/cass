@@ -16,11 +16,11 @@ export default function NotFound() {
         <h1 style={{ fontSize: 'clamp(2rem,4vw,3rem)', fontWeight: 800, letterSpacing: '-0.04em' }}>
           404
         </h1>
-        <p style={{ margin: '14px auto 0', maxWidth: 460, color: '#8d96a8', lineHeight: 1.6 }}>
-          Такой страницы нет — мы обновили сайт. Рейтинг казино 2026 и все бонусы теперь на главной.
+        <p style={{ margin: '14px auto 0', maxWidth: 460, color: '#9a9aa2', lineHeight: 1.6 }}>
+          Такой страницы нет — мы обновили сайт. Рейтинг казино 2027 и все бонусы теперь на главной.
         </p>
         <div className="hero-actions">
-          <Link href="/" className="btn btn-primary">
+          <Link href="/" className="btn btn-gold">
             На главную
             <ArrowIcon width={15} height={15} />
           </Link>

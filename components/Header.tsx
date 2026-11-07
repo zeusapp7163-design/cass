@@ -8,8 +8,10 @@ export function Header() {
     <header className="site-header">
       <div className="wrap header-inner">
         <Link href="/" className="brand" aria-label="CasinoTop — на главную">
-          <Image src="/images/brand/logo.webp" alt="" width={34} height={34} priority />
-          <span>CasinoTop</span>
+          <Image src="/images/brand/logo.webp" alt="" width={30} height={30} priority />
+          <span>
+            Casino<b>Top</b>
+          </span>
         </Link>
 
         <nav className="nav" aria-label="Основная навигация">
@@ -22,7 +24,7 @@ export function Header() {
 
         <div className="header-right">
           <span className="age">18+</span>
-          <a href="#top" className="btn btn-primary btn-sm">
+          <a href="#top" className="btn btn-gold btn-sm">
             Топ-4
             <ArrowIcon width={14} height={14} />
           </a>
