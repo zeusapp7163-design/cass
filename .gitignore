@@ -1,7 +1,8 @@
-node_modules
+﻿node_modules
 .next
 out
 .vercel
+.vercel-cli
 .env*.local
 *.tsbuildinfo
 next-env.d.ts
@@ -9,3 +10,5 @@ next-env.d.ts
 tmp
 *.log
 .npm-cache
+.vercel
+.env*
