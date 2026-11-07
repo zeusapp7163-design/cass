@@ -40,8 +40,8 @@ export type Casino = {
  */
 export const AFFILIATE = {
   oneWin: 'https://one-vv6649.com/casino/list?open=register&sub1=black',
-  jetton: 'https://jtbetlab.click/ch7v2YRRqma?target_id=/&target_type=registration',
-  getx: 'https://getx.casino/',
+  jetton: 'https://jetwpkzqvxnr.com/ch7v2YRRqma?target_id=/&target_type=registration',
+  getx: 'https://lvlx.click/tndmt0bv2',
   moriwin: 'https://click.mori.vin/MP7ineRN',
 } as const;
 

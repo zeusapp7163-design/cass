@@ -58,7 +58,7 @@ main,
 }
 
 .narrow {
-  width: min(780px, 100% - 3rem);
+  width: min(900px, 100% - 3rem);
   margin-inline: auto;
 }
 
@@ -375,10 +375,11 @@ main,
 }
 
 .head p {
-  margin-top: 12px;
-  font-size: 15.5px;
+  margin-top: 10px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--muted);
+  max-width: 62ch;
 }
 
 /* filters + sort */
@@ -902,7 +903,7 @@ main,
 /* promo */
 .promo {
   position: relative;
-  text-align: center;
+  text-align: left;
   padding: 40px 26px;
   border-radius: 20px;
   border: 1px solid rgba(255, 122, 26, 0.24);
@@ -919,7 +920,7 @@ main,
 }
 
 .promo p {
-  margin: 12px auto 0;
+  margin: 10px 0 0;
   max-width: 540px;
   font-size: 14.5px;
   line-height: 1.6;
@@ -951,7 +952,7 @@ main,
   background:
     radial-gradient(80% 130% at 50% 0%, rgba(255, 122, 26, 0.14), transparent 62%),
     #101013;
-  text-align: center;
+  text-align: left;
   overflow: hidden;
 }
 
@@ -962,7 +963,7 @@ main,
 }
 
 .quiz > p {
-  margin: 12px auto 0;
+  margin: 10px 0 0;
   max-width: 520px;
   font-size: 14.5px;
   line-height: 1.6;
@@ -972,7 +973,7 @@ main,
 .quiz-options {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   margin-top: 22px;
 }
@@ -985,7 +986,7 @@ main,
 .quiz-result {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 26px;
@@ -1032,7 +1033,7 @@ main,
 @media (min-width: 640px) {
   .slots {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 12px;
+    gap: 10px;
   }
 }
 
@@ -1541,4 +1542,52 @@ h2,
   .seo {
     text-align: left;
   }
+}
+
+
+.seo {
+  text-align: left;
+}
+
+.seo h2 {
+  text-align: left;
+}
+
+.seo p {
+  max-width: 68ch;
+}
+
+.seo-more {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.seo-more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-2);
+}
+
+.seo-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.seo-more summary::after {
+  content: '+';
+  font-size: 15px;
+  color: #8a8a94;
+}
+
+.seo-more[open] summary::after {
+  content: '−';
+}
+
+.seo-more h3:first-of-type {
+  margin-top: 18px;
 }
