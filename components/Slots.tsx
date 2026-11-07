@@ -5,22 +5,12 @@ export function Slots() {
   return (
     <section id="slots" className="section" aria-labelledby="slots-title">
       <div className="wrap">
-        <div className="section-head">
-          <div>
-            <span className="kicker">Игры</span>
-            <h2 id="slots-title" className="section-title">
-              Популярные слоты 2026
-            </h2>
-            <p className="section-sub">
-              Топовые автоматы с высоким RTP — они есть во всех четырёх казино из рейтинга.
-            </p>
-          </div>
-          <a href="#top" className="btn btn-primary btn-sm">
-            Играть в казино
-          </a>
+        <div className="head">
+          <h2 id="slots-title">Популярные слоты</h2>
+          <p>Автоматы с высоким RTP — есть во всех четырёх казино из рейтинга.</p>
         </div>
 
-        <div className="slots-grid">
+        <div className="slots">
           {SLOTS.map((slot) => (
             <a
               key={slot.name}

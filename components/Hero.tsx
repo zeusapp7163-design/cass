@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { CASINOS } from '@/lib/casinos';
-import { SITE } from '@/lib/site';
 import { ArrowIcon, StarIcon } from '@/components/icons';
 
 function shortBonus(value: string, extra: string) {
@@ -14,84 +13,53 @@ export function Hero() {
       <div className="hero-glow hero-glow--orange" aria-hidden="true" />
       <div className="hero-glow hero-glow--blue" aria-hidden="true" />
 
-      <div className="wrap hero-center">
-        <div className="hero-chips rise">
-          <span className="eyebrow">
-            <span className="dot-live" aria-hidden="true" />
-            Проверено вручную
-          </span>
-          <span className="eyebrow">Обновлено {SITE.updatedLabel}</span>
-        </div>
-
-        <h1 className="hero-title rise" style={{ animationDelay: '70ms' }}>
-          <span>Топ онлайн казино</span>
+      <div className="wrap hero-inner">
+        <h1 className="rise">
+          Топ онлайн казино
           <span className="year">2026</span>
         </h1>
 
-        <p className="hero-lead rise" style={{ animationDelay: '130ms' }}>
-          4 лицензированные площадки с бонусами до 500% и выплатами за минуты. Рейтинг собран
-          вручную — без платных мест.
+        <p className="hero-sub rise" style={{ animationDelay: '80ms' }}>
+          4 лицензированные площадки с бонусами до 500% и выплатами за минуты. Отбор вручную —
+          без платных мест.
         </p>
 
-        <div className="hero-actions rise" style={{ animationDelay: '180ms' }}>
+        <div className="hero-actions rise" style={{ animationDelay: '140ms' }}>
           <a href="#top" className="btn btn-primary">
             Смотреть рейтинг
             <ArrowIcon width={16} height={16} />
           </a>
           <a href="#how" className="btn btn-ghost">
-            Методика
+            Как мы выбираем
           </a>
         </div>
 
-        <div className="hero-stats rise" style={{ animationDelay: '230ms' }}>
-          <div className="hero-stat">
-            <b>4</b>
-            <span>казино в топе</span>
-          </div>
-          <div className="hero-stat">
-            <b>12 000+</b>
-            <span>игр и слотов</span>
-          </div>
-          <div className="hero-stat">
-            <b>5 мин</b>
-            <span>мин. вывод</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="wrap">
-        <div className="hero-tiles rise" style={{ animationDelay: '280ms' }}>
+        <div className="strip rise" style={{ animationDelay: '200ms' }}>
           {CASINOS.map((casino) => (
             <a
               key={casino.id}
               href={`#${casino.id}`}
-              className={`htile${casino.rank === 1 ? ' htile--first' : ''}`}
+              className={`strip-cell${casino.rank === 1 ? ' strip-cell--first' : ''}`}
               aria-label={`${casino.name} — ${casino.rank} место`}
             >
-              <span className="htile-head">
-                <span className="htile-rank">{String(casino.rank).padStart(2, '0')}</span>
-                <span className="htile-rating">
+              <span className="strip-head">
+                <span className="strip-rank">{String(casino.rank).padStart(2, '0')}</span>
+                <span className="strip-rating">
                   <StarIcon />
                   {casino.rating.toFixed(1)}
                 </span>
               </span>
-              <span className="htile-body">
-                <span className="htile-logo">
-                  <Image
-                    src={casino.logo}
-                    alt=""
-                    width={casino.logoWidth}
-                    height={casino.logoHeight}
-                    sizes="64px"
-                  />
-                </span>
-                <span className="htile-info">
-                  <span className="htile-name">{casino.name}</span>
-                  <span className="htile-bonus">
-                    {shortBonus(casino.bonusValue, casino.bonusExtra)}
-                  </span>
-                </span>
+              <span className="strip-logo">
+                <Image
+                  src={casino.logo}
+                  alt={casino.name}
+                  width={casino.logoWidth}
+                  height={casino.logoHeight}
+                  sizes="160px"
+                  priority={casino.rank === 1}
+                />
               </span>
+              <span className="strip-bonus">{shortBonus(casino.bonusValue, casino.bonusExtra)}</span>
             </a>
           ))}
         </div>

@@ -4,22 +4,22 @@ const CRITERIA = [
   {
     num: '01',
     title: 'Лицензия и репутация',
-    text: 'Проверяем действующую лицензию, историю бренда и жалобы игроков.',
+    text: 'Проверяем лицензию, историю бренда и жалобы игроков.',
   },
   {
     num: '02',
     title: 'Скорость выплат',
-    text: 'Тестируем вывод средств: лимиты, верификация, реальные сроки.',
+    text: 'Тестируем вывод: лимиты, верификация, реальные сроки.',
   },
   {
     num: '03',
     title: 'Бонусы и вейджер',
-    text: 'Считаем реальную выгоду: размер бонуса, отыгрыш, сроки и лимиты.',
+    text: 'Считаем реальную выгоду: размер, отыгрыш, сроки.',
   },
   {
     num: '04',
     title: 'Слоты и поддержка',
-    text: 'Оцениваем каталог игр, интерфейс, мобильную версию и скорость ответа.',
+    text: 'Оцениваем каталог, интерфейс, мобильную версию и чат.',
   },
 ];
 
@@ -27,16 +27,9 @@ export function HowWeRate() {
   return (
     <section id="how" className="section" aria-labelledby="how-title">
       <div className="wrap">
-        <div className="section-head">
-          <div>
-            <span className="kicker">Методика</span>
-            <h2 id="how-title" className="section-title">
-              Как мы выбираем казино
-            </h2>
-            <p className="section-sub">
-              Четыре критерия, по которым площадка попадает в топ — или вылетает из него.
-            </p>
-          </div>
+        <div className="head">
+          <h2 id="how-title">Как мы выбираем казино</h2>
+          <p>Четыре критерия, по которым площадка попадает в топ — или вылетает из него.</p>
         </div>
 
         <div className="steps">
@@ -49,19 +42,13 @@ export function HowWeRate() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <span className="text-[11.5px] font-bold uppercase tracking-[0.14em] text-[#7f889f]">
-            Пополнение и вывод
-          </span>
-          <ul className="payments" aria-label="Платёжные методы">
-            {PAYMENTS.map((pay) => (
-              <li key={pay} className="pay-chip">
-                <i aria-hidden="true" />
-                {pay}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="payments" aria-label="Платёжные методы">
+          {PAYMENTS.map((pay) => (
+            <li key={pay} className="pay">
+              {pay}
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
