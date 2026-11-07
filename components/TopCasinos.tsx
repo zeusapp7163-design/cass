@@ -43,21 +43,21 @@ export function TopCasinos() {
           </p>
         </div>
 
-        <div className="filters" role="group" aria-label="Фильтр казино">
-          {FILTERS.map((item) => (
-            <button
-              key={item.key}
-              type="button"
-              className="chip-btn"
-              aria-pressed={filter === item.key}
-              onClick={() => setFilter(item.key)}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-
         <div className="toolbar">
+          <div className="filters" role="group" aria-label="Фильтр казино">
+            {FILTERS.map((item) => (
+              <button
+                key={item.key}
+                type="button"
+                className="chip-btn"
+                aria-pressed={filter === item.key}
+                onClick={() => setFilter(item.key)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
           <div className="sort" role="group" aria-label="Сортировка казино">
             <button type="button" aria-pressed={mode === 'rating'} onClick={() => setMode('rating')}>
               По рейтингу

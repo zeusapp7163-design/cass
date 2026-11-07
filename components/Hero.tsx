@@ -1,6 +1,4 @@
-import { ArrowIcon, CheckIcon } from '@/components/icons';
-
-const TRUST = ['Лицензии проверены', 'Выплаты от 5 минут', 'Бонусы до 500%'];
+import { ArrowIcon } from '@/components/icons';
 
 const STATS = [
   { value: '4', label: 'казино в рейтинге' },
@@ -34,16 +32,7 @@ export function Hero() {
           </a>
         </div>
 
-        <ul className="hero-trust rise" style={{ animationDelay: '200ms' }}>
-          {TRUST.map((item) => (
-            <li key={item}>
-              <CheckIcon aria-hidden="true" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <div className="hero-stats rise" style={{ animationDelay: '250ms' }}>
+        <div className="hero-stats rise" style={{ animationDelay: '210ms' }}>
           {STATS.map((stat) => (
             <div key={stat.label} className="hero-stat">
               <b>{stat.value}</b>
