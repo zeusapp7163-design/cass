@@ -69,6 +69,7 @@ export function Hero() {
                 alt=""
                 width={first.logoWidth}
                 height={first.logoHeight}
+                sizes="(min-width: 1024px) 340px, 80vw"
                 priority
               />
             </div>
